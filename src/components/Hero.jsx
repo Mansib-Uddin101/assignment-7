@@ -29,7 +29,7 @@ const Hero = () => {
                     <p>Interactions this month</p>
                 </div>
             </div>
-            <div class="w-5/6 h-px bg-gray-200"></div>
+            <div className="w-5/6 h-px bg-gray-200"></div>
         </div>
     )
 }
