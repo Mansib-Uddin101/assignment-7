@@ -4,7 +4,7 @@ import { PiClockCounterClockwiseBold, PiChartLineBold } from 'react-icons/pi';
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white border-b border-gray-100 px-8 py-3 flex items-center justify-between">
+    <nav className="w-full bg-white border-b border-gray-100 px-8 py-3 flex items-center justify-between sticky top-0 z-50">
       <div className="flex items-center">
         <span className="text-2xl font-bold tracking-tight text-[#0f172a]">
           Keen<span className="text-[#2d5a4c]">Keeper</span>
