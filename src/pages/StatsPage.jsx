@@ -10,17 +10,18 @@ const Statspage = () => {
             return acc;
         }, { call: 0, text: 0, video: 0 }); 
     };
+    const counts = getContactCounts(contacts);
     const data = [
-        { name: 'Call', value: getContactCounts.call, fill: '#0088FE' },
-        { name: 'text', value: getContactCounts.text, fill: '#00C49F' },
-        { name: 'Video', value: getContactCounts.video, fill: '#FFBB28' }
+        { name: 'Call', value: counts.call, fill: '#244D3F' },
+        { name: 'text', value: counts.text, fill: '#7F37F5' },
+        { name: 'Video', value: counts.video, fill: '#37A163' }
     ];
-    console.log(getContactCounts.call, getContactCounts.text, getContactCounts.video);
     
     return (
-        <div>
-            <div className='my-10 shadow p-1o rounded-md border border-slate-300 container mx-auto'>
-                <h2>Your Interaction Data</h2>
+        <div className='pt-10 w-5/6 mx-auto'>
+            <h1 className='text-4xl font-bold'>Friendship Analytics</h1>
+            <div className='my-10 shadow rounded-md border border-slate-300 container mx-auto p-4'>
+                <h2 className='text-2xl font-bold'>Your Interaction Data</h2>
                 <PieChart style={{ width: '100%', margin: "auto", maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
                     <Pie
                         data={data}
