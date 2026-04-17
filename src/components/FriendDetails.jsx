@@ -12,7 +12,7 @@ import { FriendContext } from '../context/FriendContext';
 
 const FriendDetails = () => {
     const params = useParams();
-    const { friends } = useContext(FriendContext);
+    const { friends, handleContactBtn } = useContext(FriendContext);
     const selectedFriend = friends.find((friend) => friend.id == params.id);
 
     if (!selectedFriend) {
@@ -88,15 +88,15 @@ const FriendDetails = () => {
                     <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-8">
                         <h3 className="text-[#1e463a] font-bold text-lg mb-6">Quick Check-In</h3>
                         <div className="grid grid-cols-3 gap-4">
-                            <button className="flex flex-col items-center justify-center gap-2 py-6 rounded-xl border border-gray-100 bg-slate-50/50 hover:bg-slate-100 transition-colors group">
+                            <button onClick={()=> handleContactBtn("call", selectedFriend.name)} className="flex flex-col items-center justify-center gap-2 py-6 rounded-xl border border-gray-100 bg-slate-50/50 hover:bg-slate-100 transition-colors group">
                                 <PiPhoneBold className="text-2xl text-slate-700" />
                                 <span className="text-sm font-medium text-slate-600">Call</span>
                             </button>
-                            <button className="flex flex-col items-center justify-center gap-2 py-6 rounded-xl border border-gray-100 bg-slate-50/50 hover:bg-slate-100 transition-colors">
+                            <button onClick={()=> handleContactBtn("text", selectedFriend.name)} className="flex flex-col items-center justify-center gap-2 py-6 rounded-xl border border-gray-100 bg-slate-50/50 hover:bg-slate-100 transition-colors">
                                 <PiChatCenteredTextBold className="text-2xl text-slate-700" />
                                 <span className="text-sm font-medium text-slate-600">Text</span>
                             </button>
-                            <button className="flex flex-col items-center justify-center gap-2 py-6 rounded-xl border border-gray-100 bg-slate-50/50 hover:bg-slate-100 transition-colors">
+                            <button onClick={()=> handleContactBtn("video", selectedFriend.name)} className="flex flex-col items-center justify-center gap-2 py-6 rounded-xl border border-gray-100 bg-slate-50/50 hover:bg-slate-100 transition-colors">
                                 <PiVideoCameraBold className="text-2xl text-slate-700" />
                                 <span className="text-sm font-medium text-slate-600">Video</span>
                             </button>

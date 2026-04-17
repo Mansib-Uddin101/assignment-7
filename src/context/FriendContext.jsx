@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
 
 export const FriendContext = createContext()
 const FriendProvider = ({ children }) => {
@@ -18,8 +19,15 @@ const FriendProvider = ({ children }) => {
         };
         fetchProduct();
     }, []);
+
+    const handleContactBtn = (contactType, name) => {
+        console.log(contactType, name);
+        toast.success(`${contactType} with ${name} set to Timeline`)
+        
+    }
+
     const data ={
-        friends
+        friends, handleContactBtn
     }
     return (
         <FriendContext.Provider value={data}>

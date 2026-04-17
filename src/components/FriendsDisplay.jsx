@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext} from 'react'
 import FriendCard from './FriendCard';
+import { FriendContext } from '../context/FriendContext';
 
 const FriendsDisplay = () => {
-    const [friends, setFriends] = useState([]);
-    useEffect(() => {
-        const fetchProduct = async () => {
-            try {
-                const res = await fetch("/data.json");
-                const data = await res.json();
-                setFriends(data);
-                ;
-            }
-            catch (error) {
-                console.log("Error fetching data", error);
-
-            }
-        };
-        fetchProduct();
-    }, []);
+    const { friends } = useContext(FriendContext);
 
 
     return (

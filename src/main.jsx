@@ -1,12 +1,15 @@
 import { Component, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import MainLayout from './layouts/MainLayout.jsx'
 import HomePage from './pages/HomePage.jsx'
 import FriendDetails from './components/FriendDetails.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
 import FriendProvider from './context/FriendContext.jsx'
+import TimelinePage from './pages/TimelinePage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element: <FriendDetails/>
+      },
+      {
+        path: "/timeline",
+        element: <TimelinePage/>
       }
     ],
     errorElement: <ErrorPage/>
@@ -30,6 +37,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <FriendProvider>
       <RouterProvider router={router} />
+      <ToastContainer position="top-right" autoClose={3000} />
     </FriendProvider>
   </StrictMode>,
 )
