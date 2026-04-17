@@ -10,6 +10,7 @@ import FriendDetails from './components/FriendDetails.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
 import FriendProvider from './context/FriendContext.jsx'
 import TimelinePage from './pages/TimelinePage.jsx'
+import Statspage from './pages/StatsPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/timeline",
         element: <TimelinePage/>
+      },
+      {
+        path: "/stats",
+        element: <Statspage/>
       }
     ],
     errorElement: <ErrorPage/>
@@ -37,7 +42,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <FriendProvider>
       <RouterProvider router={router} />
-      <ToastContainer position="top-right" autoClose={3000} />
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </FriendProvider>
   </StrictMode>,
 )

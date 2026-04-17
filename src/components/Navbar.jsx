@@ -23,7 +23,7 @@ const Navbar = () => {
         </Link>
 
         <Link to="/timeline">
-          <button onClick={()=> setCurrentPage("timelnie")} className={`flex items-center gap-2 ${currentPage === "timeline" ? "bg-[#244D3F] text-white": "text-[#64748b]"} px-4 py-2 rounded-md shadow-sm transition-all hover:bg-[#16352c]`}>
+          <button onClick={()=> setCurrentPage("timeline")} className={`flex items-center gap-2 ${currentPage === "timeline" ? "bg-[#244D3F] text-white": "text-[#64748b]"} px-4 py-2 rounded-md shadow-sm transition-all hover:bg-[#16352c]`}>
             <PiClockCounterClockwiseBold className="text-xl" />
             <span className="font-semibold text-sm">Timeline</span>
           </button>

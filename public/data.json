@@ -21,7 +21,7 @@
     "picture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
     "email": "m.thorne@design-studio.com",
     "days_since_contact": 5,
-    "status": "active",
+    "status": "on-track",
     "tags": [
       "childhood",
       "close friend"
@@ -51,7 +51,7 @@
     "picture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
     "email": "dkim_adventures@outlook.com",
     "days_since_contact": 2,
-    "status": "active",
+    "status": "on-track",
     "tags": [
       "travel",
       "photography"
@@ -66,7 +66,7 @@
     "picture": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
     "email": "chloe.b@fashion-forward.fr",
     "days_since_contact": 15,
-    "status": "due soon",
+    "status": "almost due",
     "tags": [
       "college",
       "london"
@@ -96,7 +96,7 @@
     "picture": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
     "email": "aisha.k.kitchen@example.com",
     "days_since_contact": 4,
-    "status": "active",
+    "status": "on-track",
     "tags": [
       "foodie",
       "neighbor"
@@ -111,7 +111,7 @@
     "picture": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
     "email": "leo.sterling@legal.com",
     "days_since_contact": 28,
-    "status": "due soon",
+    "status": "almost due",
     "tags": [
       "university",
       "debate"
@@ -126,7 +126,7 @@
     "picture": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
     "email": "maya.yoga@wellbeing.com",
     "days_since_contact": 10,
-    "status": "active",
+    "status": "on-track",
     "tags": [
       "fitness",
       "meditation"
