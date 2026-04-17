@@ -4,22 +4,23 @@ import { toast } from 'react-toastify';
 export const FriendContext = createContext()
 const FriendProvider = ({ children }) => {
     const [friends, setFriends] = useState([]);
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         const fetchProduct = async () => {
             try {
                 const res = await fetch("/data.json");
                 const data = await res.json();
                 setFriends(data);
-                ;
             }
             catch (error) {
                 console.log("Error fetching data", error);
-
+            } finally {
+                setLoading(false);
             }
         };
         fetchProduct();
     }, []);
-
 
     const [contacts, setContacts] = useState([]);
     const handleContactBtn = (contactType, name) => {
@@ -37,13 +38,15 @@ const FriendProvider = ({ children }) => {
         }
         setContacts([...contacts, newContact])
         toast.success(`${contactType} with ${name} set to Timeline`);
-
     }
-    
 
     const data = {
-        friends, handleContactBtn, contacts
+        friends, 
+        handleContactBtn, 
+        contacts, 
+        loading
     }
+
     return (
         <FriendContext.Provider value={data}>
             {children}
