@@ -1,16 +1,26 @@
-# React + Vite
+# KeenKeeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Nurture the relationships that matter most.**
 
-Currently, two official plugins are available:
+KeenKeeper is a personal relationship management tool designed to help you stay connected with friends, family, and colleagues. In a busy world, it’s easy to let meaningful connections fade; KeenKeeper acts as your "personal shelf," reminding you to reach out, tracking your interaction history, and helping you maintain consistent social goals.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend:** React.js, Tailwind CSS
+* **Styling:** Modern UI/UX principles with a focus on clean, forest-green aesthetics
+* **Development:** Vite / Create React App
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Key Features
+
+### 1. Smart Relationship Tracking
+Stay on top of your social life with a visual dashboard. Each contact card displays their category (Work, Family, etc.), how long it’s been since your last contact, and automated status badges like **"Almost Due"** or **"Overdue"** based on your custom goals.
+
+### 2. Interactive Activity Timeline
+Never forget a conversation again. The **Timeline** provides a chronological feed of every meetup, call, text, and video chat. It includes filtering capabilities so you can quickly see when you last had a face-to-face meeting versus a quick digital check-in.
+
+### 3. Action-Oriented Contact Management
+The **FriendDetails** view gives you a 360-degree look at your relationship health. It features "Quick Check-In" buttons to trigger communication immediately and "Snooze" functionality for when life gets busy but you still want to keep the connection alive.
