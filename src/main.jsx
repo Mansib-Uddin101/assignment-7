@@ -10,7 +10,7 @@ import FriendDetails from './components/FriendDetails.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
 import FriendProvider from './context/FriendContext.jsx'
 import TimelinePage from './pages/TimelinePage.jsx'
-import Statspage from './pages/StatsPage.jsx';
+import Statspage from './pages/Statspage.jsx';
 
 const router = createBrowserRouter([
   {
