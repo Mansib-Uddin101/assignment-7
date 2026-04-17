@@ -1,70 +1,48 @@
-import React, { useContext } from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
+import { useContext } from 'react';
+import { Cell, Legend, Pie, PieChart, Tooltip } from 'recharts';
 import { FriendContext } from '../context/FriendContext';
 
-const StatsPage = () => {
-  const { contacts } = useContext(FriendContext);
-
-  const dataMap = contacts.reduce((acc, curr) => {
-    acc[curr.type] = (acc[curr.type] || 0) + 1;
-    return acc;
-  }, {});
-
-  const chartData = Object.keys(dataMap).map((key) => ({
-    name: key,
-    value: dataMap[key],
-  }));
-
-  const COLORS = {
-    Text: '#8b5cf6',
-    Call: '#1e463a',
-    Video: '#3da066',
-    Meetup: '#f59e0b',
-  };
-
-  return (
-    <div className="min-h-screen bg-[#f8fafc] p-10 md:p-16">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-[#1a2e2a] mb-8">Friendship Analytics</h1>
-
-        <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
-          <h2 className="text-xl font-bold text-[#1a2e2a] mb-4">By Interaction Type</h2>
-          
-          <div className="h-100 w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={chartData}
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={80}
-                  outerRadius={120}
-                  paddingAngle={8}
-                  cornerRadius={10}
-                  dataKey="value"
-                >
-                  {chartData.map((entry, index) => (
-                    <Cell 
-                      key={`cell-${index}`} 
-                      fill={COLORS[entry.name] || '#cbd5e1'} 
+const Statspage = () => {
+    const { contacts } = useContext(FriendContext);
+    const getContactCounts = (contacts) => {
+        return contacts.reduce((acc, contact) => {
+            acc[contact.type] = (acc[contact.type] || 0) + 1;
+            return acc;
+        }, { call: 0, text: 0, video: 0 }); 
+    };
+    const data = [
+        { name: 'Call', value: getContactCounts.call, fill: '#0088FE' },
+        { name: 'text', value: getContactCounts.text, fill: '#00C49F' },
+        { name: 'Video', value: getContactCounts.video, fill: '#FFBB28' }
+    ];
+    console.log(getContactCounts.call, getContactCounts.text, getContactCounts.video);
+    
+    return (
+        <div>
+            <div className='my-10 shadow p-1o rounded-md border border-slate-300 container mx-auto'>
+                <h2>Your Interaction Data</h2>
+                <PieChart style={{ width: '100%', margin: "auto", maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
+                    <Pie
+                        data={data}
+                        innerRadius="80%"
+                        outerRadius="100%"
+                        // Corner radius is the rounded edge of each pie slice
+                        cornerRadius="50%"
+                        fill="#8884d8"
+                        // padding angle is the gap between each pie slice
+                        paddingAngle={5}
+                        dataKey="value"
+                        isAnimationActive={true}
                     />
-                  ))}
-                </Pie>
-                <Tooltip 
-                  contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                />
-                <Legend 
-                  verticalAlign="bottom" 
-                  height={36} 
-                  iconType="circle"
-                />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
+                    <Legend />
+                    <Tooltip />
+                    {data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.fill} />
+                    ))}
+                </PieChart>
+            </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
-export default StatsPage;
+export default Statspage
